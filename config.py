@@ -1,3 +1,3 @@
 class Config:
-    DEBUG = True
-    TESTING = False
+    DATABASE_URI = 'sqlite:///mutante.db' 
+    SECRET_KEY = 'mysecretkey' 

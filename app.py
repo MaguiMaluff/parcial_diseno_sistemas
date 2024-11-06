@@ -1,7 +1,7 @@
 from flask import Flask
 from controllers.mutant_controller import mutant_bp
 from repositories.dna_repository import DNARepository
-
+import os
 def create_app():
     app = Flask(__name__)
     app.config.from_object('config.Config') 
@@ -17,4 +17,4 @@ def init_db():
 
 if __name__ == "__main__":
     app = create_app()
-    app.run(debug=True)
+    app.run(debug=True, host='0.0.0.0', port=int(os.getenv("PORT", 5000)))
